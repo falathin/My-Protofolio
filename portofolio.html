@@ -85,7 +85,6 @@
          /* Card hover effect */
         .experience-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: linear-gradient(145deg, #ffffff, #f5f7ff);
         }
 
         .experience-card:hover {
@@ -354,7 +353,7 @@
             <div class="row">
                 <!-- Internship Experience -->
                 <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-duration="800">
-                    <div class="card shadow-sm border-0 rounded experience-card hover-card">
+                    <div class="card shadow-sm border-0 rounded experience-card hover-card" data-bs-toggle="modal" data-bs-target="#internshipModal">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <i class="fas fa-laptop-code text-info"></i> Internship at PT Inovindo Digital Media
@@ -365,8 +364,8 @@
                 </div>
 
                 <!-- Project Experience -->
-                <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-duration="800">
-                    <div class="card shadow-sm border-0 rounded experience-card hover-card">
+                <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-duration="1200">
+                    <div class="card shadow-sm border-0 rounded experience-card hover-card" data-bs-toggle="modal" data-bs-target="#projectsModal">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <i class="fas fa-project-diagram text-warning"></i> Projects
@@ -377,14 +376,30 @@
                 </div>
 
                 <!-- Japanese Language Competition -->
-                <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-duration="800">
-                    <a href="https://www.instagram.com/p/C7ORKi0JX5N/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="nav-link">
+                <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-duration="1600">
+                    <a href="https://www.instagram.com/p/C7ORKi0JX5N/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="nav-link" data-bs-toggle="modal" data-bs-target="#competitionModal">
                         <div class="card shadow-sm border-0 rounded experience-card hover-card">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     <i class="fas fa-trophy text-success"></i> Japanese Language Competitions
                                 </h5>
-                                <p class="card-text">Participated in various Japanese language competitions, honing my language skills and competing in events to further develop my proficiency in the language.</p>
+                                <p class="card-text">Participated in various Japanese language competitions, honing my language skills and competing in events to further develop my proficiency.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- GitHub Project Card -->
+                <div class="col-md-6 mb-4" data-aos="zoom-in" data-aos-duration="2000">
+                    <a href="https://github.com/piscokz/proyek_tefa.git" class="nav-link" data-bs-toggle="modal" data-bs-target="#githubModal">
+                        <div class="card shadow-sm border-0 rounded experience-card hover-card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fab fa-github text-primary"></i> GitHub Projects
+                                </h5>
+                                <p class="card-text">
+                                    Explore my projects and exercises on GitHub, showcasing my work and learning progress, including the 'proyek_tefa' project.
+                                </p>
                             </div>
                         </div>
                     </a>
@@ -392,6 +407,80 @@
             </div>
         </div>
     </section>
+
+    <!-- Internship Modal -->
+    <div class="modal fade" id="internshipModal" tabindex="-1" aria-labelledby="internshipModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="internshipModalLabel">Internship at PT Inovindo Digital Media</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Detailed information about the internship experience, including projects worked on, skills gained, and other achievements during the internship.
+                    <div class="mt-3">
+                        <a href="https://inovindoacademy.com/internship/profile" class="btn btn-primary" target="_blank">Visit Company Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Modal -->
+    <div class="modal fade" id="projectsModal" tabindex="-1" aria-labelledby="projectsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectsModalLabel">Projects</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    More detailed descriptions of specific projects, technologies used, and the impact of these projects on skill development.
+                    <div class="mt-3">
+                        <a href="https://github.com/piscokz/proyek_tefa.git" class="btn btn-primary" target="_blank">View Project on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Competition Modal -->
+    <div class="modal fade" id="competitionModal" tabindex="-1" aria-labelledby="competitionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="competitionModalLabel">Japanese Language Competitions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    A deeper look into the competitions participated in, experiences, and achievements earned through these events.
+                    <div class="mt-3">
+                        <a href="https://www.instagram.com/p/C7ORKi0JX5N/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="btn btn-primary" target="_blank">View Competition Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GitHub Modal -->
+    <div class="modal fade" id="githubModal" tabindex="-1" aria-labelledby="githubModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="githubModalLabel">GitHub Projects</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Highlights of projects hosted on GitHub, including details about 'proyek_tefa' and other significant contributions.
+                    <div class="mt-3">
+                        <a href="https://github.com/piscokz/proyek_tefa.git" class="btn btn-primary" target="_blank">Explore on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-5">
