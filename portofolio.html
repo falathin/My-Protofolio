@@ -17,91 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <!-- CSS Hover and Animation -->
-    <style>
-        #about h2:hover {
-            color: #007bff;
-            text-decoration: underline;
-        }
-        #about .btn:hover {
-            background-color: #007bff;
-            color: #ffffff;
-            transform: scale(1.05);
-        }
-        .photo-container {
-            position: relative;
-            overflow: hidden;
-            height: 300px; /* Adjust height to your needs */
-        }
-        .photo-container img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.3s ease;
-        }
-        .photo-container:hover img {
-            transform: scale(1.1); /* Zoom effect on hover */
-        }
-        .photo-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .photo-container:hover .photo-overlay {
-            opacity: 1;
-        }
-        .photo-container:hover .fa-search-plus {
-            transform: scale(1.2); /* Enlarging icon effect */
-        }
-        .navbar-nav .nav-link {
-        font-size: 1.1rem;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        }
-        .navbar-nav .nav-link:hover {
-            color: #fff; /* White text color */
-            text-decoration: none; /* Remove underline */
-            text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
-            transform: scale(1.1); /* Slight zoom effect */
-        }
-        .navbar-brand i {
-            margin-right: 10px;
-        }
-        .navbar-nav .nav-item i {
-            margin-right: 8px;
-        }
-        .education-card {
-            transition: box-shadow 0.3s ease;
-        }
-        
-        .education-card:hover {
-            /* box-shadow: 0 50px 80px rgba(0, 232, 35, 0.3); */
-            transform: scale(1.05); /* Enlarging icon effect */
-        }
-         /* Card hover effect */
-        .experience-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .experience-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 30px rgba(255, 162, 0, 0.2);
-        }
-
-        /* Card icon styling */
-        .experience-card .card-title i {
-            margin-right: 8px;
-            font-size: 1.2em;
-        }
-    </style>
 </head>
 
 <body id="page-top" style="font-family: 'Montserrat', sans-serif;">
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#page-top">
@@ -513,6 +431,7 @@
     <script>
         AOS.init();
     </script>
+    <script src="nav.js"></script>
 </body>
 
 </html>
