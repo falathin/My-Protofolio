@@ -159,19 +159,64 @@
                 <i class="fab fa-linkedin-in text-blue-600"></i>
             </a>
         </p>        
-    
+        <br><hr><br>
         <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 rounded-b-lg"></div>
-        <!-- Formulir Kontak -->
-        <div class="mt-6 text-center transition-all duration-200 ease-in-out">
-            <h2 class="text-xl font-semibold text-gray-800 mb-4" id="contact-title">Punya Pertanyaan? Kirimkan Pesan!</h2>
-            <form id="contact-form">
-                <textarea name="message" id="message" rows="4" class="w-full max-w-md p-4 bg-gray-50 border-2 border-gray-300 rounded-lg shadow-sm text-sm focus:ring-2 focus:ring-blue-500" placeholder="Tanya?, Curahkan?, Sampaikan? (Opsional)" required></textarea>
-                <button type="submit" class="mt-4 px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-200 ease-in-out" id="contact-button">
-                    Kirim Pesan
-                </button>
-            </form>
-            <p class="mt-4 text-gray-600" id="contact-note">Ketik jika kamu ingin menyampaikan juga!</p>
-        </div>
+    <!-- Contact Form -->
+    <div class="mt-6 text-center transition-all duration-200 ease-in-out">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4" id="contact-title">Ada yang ingin kamu sampaikan dari hati? Kirimkan Pesan Cinta!</h2>
+        <form id="contact-form" method="POST">
+            <!-- Input untuk Nama Pengirim -->
+            <div class="relative mb-4">
+                <i class="fas fa-user absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                <input type="text" name="name" id="sendername" placeholder="Siapa Namamu?" class="w-full max-w-md p-4 pl-12 bg-gray-50 border-2 border-gray-300 rounded-lg shadow-sm text-sm focus:ring-2 focus:ring-blue-500" required>
+            </div>
+
+            <!-- Input untuk Pesan -->
+            <div class="relative mb-4">
+                <i class="fas fa-comment-alt absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                <textarea name="message" rows="4" class="w-full max-w-md p-4 pl-12 bg-gray-50 border-2 border-gray-300 rounded-lg shadow-sm text-sm focus:ring-2 focus:ring-blue-500" placeholder="Apa yang ada di hatimu? (Tuliskan apa saja yang ingin kamu ungkapkan)" required></textarea>
+            </div>
+
+            <!-- Tombol Kirim Pesan -->
+            <button type="submit" class="mt-4 px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-200 ease-in-out" id="contact-button">
+                <i class="fas fa-heart mr-2"></i> Kirimkan Pesan Cinta
+            </button>
+        </form>
+        <p class="mt-4 text-gray-600" id="contact-note">Tulis apa saja yang ingin kamu sampaikan, biar hati kita lebih dekat!</p>
+    </div>
+
+    <script>
+        // Language switch functionality
+        document.getElementById('language').addEventListener('change', function() {
+            const lang = this.value;
+
+            const contactTitle = document.getElementById('contact-title');
+            const contactButton = document.getElementById('contact-button');
+            const contactNote = document.getElementById('contact-note');
+            const textarea = document.querySelector('textarea[name="message"]');
+            const inputName = document.querySelector('input[name="name"]');
+
+            if (lang === 'su') {
+                contactTitle.innerHTML = 'Naha anjeun gaduh curahan hate? Kirimkeun pesen pinuh ku asih!';
+                contactButton.innerHTML = '<i class="fas fa-heart mr-2"></i>Kirim Pesen Asih';
+                contactNote.innerHTML = 'Tulis naon waé anu hoyong anjeun ungkabkeun, supaya hate urang tiasa langkung deukeut!';
+                textarea.placeholder = 'Nanya, Curhat, Atanapi Sampaikan? (Gratis, ti hate!)';
+                inputName.placeholder = 'Saha nami asih anjeun?';
+            } else if (lang === 'en') {
+                contactTitle.innerHTML = 'Got Something to Share? Send Your Love!';
+                contactButton.innerHTML = '<i class="fas fa-heart mr-2"></i>Send Love Message';
+                contactNote.innerHTML = 'Type what’s in your heart, let’s get closer!';
+                textarea.placeholder = 'Ask, Pour Your Heart Out, Share Your Thoughts? (From the Heart)';
+                inputName.placeholder = 'What’s Your Name, My Love?';
+            } else if (lang === 'jp') {
+                contactTitle.innerHTML = '伝えたいことがありますか？愛のメッセージを送ってください！';
+                contactButton.innerHTML = '<i class="fas fa-heart mr-2"></i>愛のメッセージを送信';
+                contactNote.innerHTML = 'あなたの心からの言葉を書いてください、もっと近くなりましょう！';
+                textarea.placeholder = '質問、伝えたいこと、心の中の思いはありますか？（心を込めて）';
+                inputName.placeholder = 'あなたの名前は何ですか？愛する人？';
+            }
+        });
+    </script>
     </div>     
     <script>
         document.getElementById('language').addEventListener('change', function() {
@@ -230,33 +275,156 @@
                 buttonText.innerHTML = "実は、あなたについて迷っています";
             }
         }
-        document.getElementById('language').addEventListener('change', function() {
-            const lang = this.value;
-
-            const contactTitle = document.getElementById('contact-title');
-            const contactButton = document.getElementById('contact-button');
-            const contactNote = document.getElementById('contact-note');
-            const textarea = document.querySelector('textarea[name="message"]'); // Select the textarea
-
-            if (lang === 'su') {
-                contactTitle.innerHTML = 'Punya Pertanyaan? Kirimkan Pesan!';
-                contactButton.innerHTML = 'Kirim Pesan';
-                contactNote.innerHTML = 'Ketik jika kamu ingin menyampaikan juga!';
-                textarea.placeholder = 'Tanya?, Curahkan?, Sampaikan? (Opsional)';
-            } else if (lang === 'en') {
-                contactTitle.innerHTML = 'Have a Question? Send a Message!';
-                contactButton.innerHTML = 'Send Message';
-                contactNote.innerHTML = 'Type here if you have something to say!';
-                textarea.placeholder = 'Ask, Pour Out, Share? (Optional)';
-            } else if (lang === 'jp') {
-                contactTitle.innerHTML = '質問がありますか？メッセージを送ってください！';
-                contactButton.innerHTML = 'メッセージを送る';
-                contactNote.innerHTML = '何か伝えたいことがあれば、ここに入力してください！';
-                textarea.placeholder = '質問、気持ちを伝えたい？（オプション）';
-            }
-        });
-
     </script>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 </body>
 </html>
+
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
+
+$statusMessage = '';  // Initialize status message
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['name'], $_POST['message'])) {
+        $name = htmlspecialchars($_POST['name']);
+        $message = htmlspecialchars($_POST['message']);
+
+        // Send email using PHPMailer
+        $mail = new PHPMailer(true);
+
+        try {
+            // Server settings
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';  // Set the SMTP server to Gmail
+            $mail->SMTPAuth = true;
+            $mail->Username = 'ibrahimahmadfalatin@gmail.com';  // Your Gmail email address
+            $mail->Password = 'nbtz jfbf oann xvwu';  // Your Gmail App Password (not your regular Gmail password)
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;  // Use port 587 for TLS
+
+            // Recipients
+            $mail->setFrom('ibrahimahmadfalatin@gmail.com', 'Ibrahim');  // Your email address
+            $mail->addAddress('ibrahimahmadfalatin@gmail.com', 'Ibrahim');  // Recipient's email
+
+            $mail->isHTML(true);
+            $mail->Subject = 'Pesan Baru Dari ' . $name;
+            
+            // Beautified HTML Body with Romantic Theme
+            $mail->Body    = '
+                <html>
+                <head>
+                    <style>
+                        body {
+                            font-family: "Georgia", serif;
+                            background-color: #f9f3f3;
+                            margin: 0;
+                            padding: 0;
+                            color: #4e4e4e;
+                        }
+                        .container {
+                            width: 100%;
+                            max-width: 700px;
+                            margin: 30px auto;
+                            padding: 40px;
+                            background-color: #ffffff;
+                            border-radius: 12px;
+                            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+                            border-top: 5px solid #ff99cc;
+                        }
+                        h3 {
+                            color: #d76d7e;
+                            font-size: 2em;
+                            text-align: center;
+                            margin-bottom: 30px;
+                            font-style: italic;
+                            letter-spacing: 2px;
+                        }
+                        .message-content {
+                            font-size: 1.1em;
+                            color: #555555;
+                            line-height: 1.8;
+                            text-align: center;
+                            margin-bottom: 30px;
+                            padding: 20px;
+                            background-color: #fff1f4;
+                            border-radius: 8px;
+                        }
+                        .footer {
+                            font-size: 0.9em;
+                            color: #b3b3b3;
+                            text-align: center;
+                            margin-top: 40px;
+                            padding-top: 15px;
+                            border-top: 1px dashed #ff99cc;
+                        }
+                        .button {
+                            display: inline-block;
+                            padding: 12px 30px;
+                            background-color: #ff69b4;
+                            color: #ffff;
+                            text-decoration: none;
+                            border-radius: 8px;
+                            font-weight: bold;
+                            font-size: 1.1em;
+                            text-transform: uppercase;
+                            margin-top: 20px;
+                            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                            transition: background-color 0.3s ease;
+                        }
+                        .button:hover {
+                            background-color: #ff3385;
+                            text-decoration: none;
+                        }
+                        .signature {
+                            font-family: "Lucida Handwriting", cursive;
+                            font-size: 1.2em;
+                            color: #d76d7e;
+                            text-align: center;
+                            margin-top: 30px;
+                            font-style: italic;
+                        }
+                        .heart {
+                            color: #ff4d8d;
+                            font-size: 1.5em;
+                            text-align: center;
+                            margin-top: 10px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <h3>Pesan Cinta Baru Dari: ' . $name . '</h3>
+                        <div class="message-content">
+                            <p><strong>Pesan:</strong><br>' . nl2br($message) . '</p>
+                            <p><strong>Nama Pengirim:</strong> ' . $name . '</p>
+                        </div>
+                        <div class="footer">
+                            <p>Terima kasih telah mengirimkan pesan hati Anda!</p>
+                            <a href="https://wa.me/6285885848027" class="button">Balas Pesan</a>
+                        </div>
+                        <div class="signature">
+                            <p>Kubuat Dengan Cinta,</p>
+                            <p>Ibrahim Ahmad Falathin</p>
+                        </div>
+                        <div class="heart">
+                            <p>❤️</p>
+                        </div>
+                    </div>
+                </body>
+                </html>';
+            
+            // Send the email
+            $mail->send();
+            $statusMessage = "<script>alert('Pesan berhasil terkirim!');</script>"; // Display success message
+        } catch (Exception $e) {
+            $statusMessage = "<script>alert('Gagal mengirim pesan. Error: " . $mail->ErrorInfo . "');</script>"; // Display error message
+        }
+    } else {
+        $statusMessage = "<script>alert('Harap isi semua kolom sebelum mengirim pesan.');</script>"; // Display validation message
+    }
+}
+?>
