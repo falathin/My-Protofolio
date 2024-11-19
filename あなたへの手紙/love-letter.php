@@ -80,6 +80,12 @@
     </style>    
 </head>
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <iframe 
+        src="https://www.youtube.com/embed/_YRNGQ3gq6w?autoplay=1&controls=0&loop=1&playlist=_YRNGQ3gq6w" 
+        frameborder="0" 
+        allow="autoplay" 
+        style="width:0; height:0; border:none; overflow:hidden;">
+    </iframe>
     <div class="relative w-full max-w-md p-6 bg-white shadow-lg rounded-lg letter">
         <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-pink-400 to-purple-400 rounded-t-lg"></div>
     
